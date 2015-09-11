@@ -5,17 +5,18 @@
 		<title>Baconator</title>
 	</head>
 	<body>
-		<h1>welcome to my Django site</h1>
 		<div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            
-        </div>
+    <h1><a href="/">Welcome to my Django Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-           
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
+
+      
 	</body>
 	</html>	
