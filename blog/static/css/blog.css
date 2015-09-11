@@ -3,7 +3,9 @@ h1 a {
     font-family: 'Lobster';
 }
 
-
+body {
+	padding: 15px;
+}
 
 .page-header {
     background-color: #ff9400;
