@@ -12,11 +12,11 @@
            <h1><a href="{% url "blog.views.post_detail" pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaks }}</p>
           
-           <a class="showinc" href="#">Comments: {{ post.approved_comments.count }}</a>
-           <div class= "thing">
+           <a class="commentlink" id = "commentlink{{forloop.counter}}"   href="#">Comments: {{ post.approved_comments.count }}</a>
+           <div class= "commentdiv" id = "commentdiv{{forloop.counter}}"  style="display: none;">
              {% for comment in post.comments.all %}
     {% if user.is_authenticated or comment.approved_comment %}
-    <div class="comment" style="display: none;">
+    <div class="comment" >
         <div class="date">
             {{ comment.created_date }}
             {% if not comment.approved_comment %}
@@ -40,8 +40,9 @@
 
  
 <script>
-$( ".showinc" ).click(function() {
-  $( ".thing" ).toggle( "slow" );
+$( ".commentlink" ).click(function() {
+  var n = parseInt(this.id.replace (/[A-Za-z$-]/g, ""));
+  $( "#commentdiv"+n).toggle( "slow" );
   return false;
 });
 </script>
