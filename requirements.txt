@@ -1,8 +1,10 @@
 backports.ssl-match-hostname==3.4.0.2
 certifi==2015.4.28
+dj-database-url==0.3.0
 Django==1.8.3
 functools32==3.2.3.post1
 googlemaps==2.2
+gunicorn==19.3.0
 ipython==3.1.0
 Jinja2==2.7.3
 jsonschema==2.5.1
@@ -18,3 +20,6 @@ six==1.9.0
 terminado==0.5
 tornado==4.2
 tweepy==3.3.0
+wheel==0.24.0
+whitenoise==2.0.4
+psycopg2==2.5.4
